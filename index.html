@@ -107,7 +107,7 @@ function openVideo(src, index){ resumeMusicAfterVideo = !soundtrack.paused; if(r
 function closeVideo(){ player.pause(); player.removeAttribute('src'); player.load(); modal.classList.remove('open'); document.body.style.overflow=''; if(resumeMusicAfterVideo){ soundtrack.play().then(()=>musicToggle.textContent='♫ Music: On').catch(()=>musicToggle.textContent='♫ Tap for music'); } resumeMusicAfterVideo=false; }
 videos.forEach((file, i) => {
  const card = document.createElement('article'); card.className='memory-card'; card.tabIndex=0; card.setAttribute('role','button'); card.setAttribute('aria-label',`Play memory ${i+1}`);
- card.innerHTML = `<div class="thumb"><video muted playsinline preload="metadata" src="videos/${file}#t=0.2"></video><span class="play">▶</span></div><div class="card-title">Little moment ${String(i+1).padStart(2,'0')}</div><div class="card-sub">Tap to relive it</div>`;
+ card.innerHTML = `<div class="thumb"><video muted playsinline preload="metadata" src="${file}#t=0.2"></video><span class="play">▶</span></div><div class="card-title">Little moment ${String(i+1).padStart(2,'0')}</div><div class="card-sub">Tap to relive it</div>`;
  const action=()=>openVideo(`videos/${file}`,i); card.addEventListener('click',action); card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();action();}}); grid.appendChild(card);
 });
 document.getElementById('enterMemories').addEventListener('click',()=>{
