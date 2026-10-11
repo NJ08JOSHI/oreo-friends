@@ -108,7 +108,7 @@ function closeVideo(){ player.pause(); player.removeAttribute('src'); player.loa
 videos.forEach((file, i) => {
  const card = document.createElement('article'); card.className='memory-card'; card.tabIndex=0; card.setAttribute('role','button'); card.setAttribute('aria-label',`Play memory ${i+1}`);
  card.innerHTML = `<div class="thumb"><video muted playsinline preload="metadata" src="${file}#t=0.2"></video><span class="play">▶</span></div><div class="card-title">Little moment ${String(i+1).padStart(2,'0')}</div><div class="card-sub">Tap to relive it</div>`;
- const action=()=>openVideo(`videos/${file}`,i); card.addEventListener('click',action); card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();action();}}); grid.appendChild(card);
+ const action=()=>openVideo(`${file}`,i); card.addEventListener('click',action); card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();action();}}); grid.appendChild(card);
 });
 document.getElementById('enterMemories').addEventListener('click',()=>{
  document.getElementById('entryGate').classList.add('gone');
