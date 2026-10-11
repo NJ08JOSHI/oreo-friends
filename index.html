@@ -42,19 +42,19 @@ button,a{font:inherit}.page{max-width:1000px;margin:auto;padding:22px 18px 60px}
     <div class="slideshow" id="slideshow" aria-label="Photo memories slideshow"></div>
     <p class="hint">A few little moments, slowly passing by ♡</p>
     <div class="photo-grid">
-      <figure class="photo-card"><img loading="eager" fetchpriority="high" decoding="async" src="photos/photo-01.jpeg" alt="Preiti cuddling with a dog"><figcaption>Best cuddle partner 🐾</figcaption></figure>
-      <figure class="photo-card"><img loading="eager" decoding="async" src="photos/photo-02.jpeg" alt="Oreo wearing a blue and black outfit"><figcaption>Meet Oreo ❤️</figcaption></figure>
-      <figure class="photo-card"><img loading="eager" decoding="async" src="photos/photo-03.jpeg" alt="A hand holding a dog's paw"><figcaption>A little paw promise</figcaption></figure>
-      <figure class="photo-card"><img loading="eager" decoding="async" src="photos/photo-04.jpeg" alt="Oreo looking out of a window"><figcaption>Those flying ears 😂</figcaption></figure>
-      <figure class="photo-card"><img loading="eager" decoding="async" src="photos/photo-05.jpeg" alt="Oreo in a Batman outfit"><figcaption>Our cutest Batman 🦇</figcaption></figure>
-      <figure class="photo-card"><img loading="eager" decoding="async" src="photos/photo-06.jpeg" alt="Preiti cuddling a dog at bedtime"><figcaption>Goodnight cuddles 🌙</figcaption></figure>
-      <figure class="photo-card"><img loading="eager" decoding="async" src="photos/photo-07.jpeg" alt="Oreo with family"><figcaption>Family, with four paws</figcaption></figure>
-      <figure class="photo-card"><img loading="eager" decoding="async" src="photos/photo-08.jpeg" alt="Preiti holding a puppy"><figcaption>Little friends, big love</figcaption></figure>
-      <figure class="photo-card"><img loading="eager" decoding="async" src="photos/photo-09.jpeg" alt="Two dogs resting together"><figcaption>A sleepy Friday</figcaption></figure>
-      <figure class="photo-card"><img loading="eager" decoding="async" src="photos/photo-10.jpeg" alt="Preiti sitting beside Oreo"><figcaption>Napping partner &amp; snack thief</figcaption></figure>
-      <figure class="photo-card"><img loading="eager" decoding="async" src="photos/photo-11.jpeg" alt="Preiti with Oreo"><figcaption>Life is better with a furry shadow</figcaption></figure>
-      <figure class="photo-card"><img loading="eager" decoding="async" src="photos/photo-12.jpeg" alt="A hand holding a dog's paw"><figcaption>Always paw by paw</figcaption></figure>
-      <figure class="photo-card"><img loading="eager" decoding="async" src="photos/photo-13.jpeg" alt="Dogs resting together"><figcaption>More paws, more love</figcaption></figure>
+      <figure class="photo-card"><img loading="eager" fetchpriority="high" decoding="async" src="photo-01.jpeg" alt="Preiti cuddling with a dog"><figcaption>Best cuddle partner 🐾</figcaption></figure>
+      <figure class="photo-card"><img loading="eager" decoding="async" src="photo-02.jpeg" alt="Oreo wearing a blue and black outfit"><figcaption>Meet Oreo ❤️</figcaption></figure>
+      <figure class="photo-card"><img loading="eager" decoding="async" src="photo-03.jpeg" alt="A hand holding a dog's paw"><figcaption>A little paw promise</figcaption></figure>
+      <figure class="photo-card"><img loading="eager" decoding="async" src="photo-04.jpeg" alt="Oreo looking out of a window"><figcaption>Those flying ears 😂</figcaption></figure>
+      <figure class="photo-card"><img loading="eager" decoding="async" src="photo-05.jpeg" alt="Oreo in a Batman outfit"><figcaption>Our cutest Batman 🦇</figcaption></figure>
+      <figure class="photo-card"><img loading="eager" decoding="async" src="photo-06.jpeg" alt="Preiti cuddling a dog at bedtime"><figcaption>Goodnight cuddles 🌙</figcaption></figure>
+      <figure class="photo-card"><img loading="eager" decoding="async" src="photo-07.jpeg" alt="Oreo with family"><figcaption>Family, with four paws</figcaption></figure>
+      <figure class="photo-card"><img loading="eager" decoding="async" src="photo-08.jpeg" alt="Preiti holding a puppy"><figcaption>Little friends, big love</figcaption></figure>
+      <figure class="photo-card"><img loading="eager" decoding="async" src="photo-09.jpeg" alt="Two dogs resting together"><figcaption>A sleepy Friday</figcaption></figure>
+      <figure class="photo-card"><img loading="eager" decoding="async" src="photo-10.jpeg" alt="Preiti sitting beside Oreo"><figcaption>Napping partner &amp; snack thief</figcaption></figure>
+      <figure class="photo-card"><img loading="eager" decoding="async" src="photo-11.jpeg" alt="Preiti with Oreo"><figcaption>Life is better with a furry shadow</figcaption></figure>
+      <figure class="photo-card"><img loading="eager" decoding="async" src="photo-12.jpeg" alt="A hand holding a dog's paw"><figcaption>Always paw by paw</figcaption></figure>
+      <figure class="photo-card"><img loading="eager" decoding="async" src="photo-13.jpeg" alt="Dogs resting together"><figcaption>More paws, more love</figcaption></figure>
     </div>
   </section>
 
@@ -81,7 +81,7 @@ const photoCaptions = ["Best cuddle partner 🐾","Meet Oreo ❤️","A little p
 const slideshow = document.getElementById('slideshow');
 photoCaptions.forEach((text, i) => {
   const slide = document.createElement('div'); slide.className = 'slide' + (i===0 ? ' active' : '');
-  slide.innerHTML = `<img src="photos/photo-${String(i+1).padStart(2,'0')}.jpeg" alt="${text.replaceAll('"','')}" ${i===0?'fetchpriority="high"':''}><div class="slide-caption">${text}</div>`;
+  slide.innerHTML = `<img src="photo-${String(i+1).padStart(2,'0')}.jpeg" alt="${text.replaceAll('"','')}" ${i===0?'fetchpriority="high"':''}><div class="slide-caption">${text}</div>`;
   slideshow.appendChild(slide);
 });
 const slides = [...document.querySelectorAll('.slide')];
